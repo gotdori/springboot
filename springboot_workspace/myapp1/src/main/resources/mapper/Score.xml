@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Score">
+
+	<select id="Score_getList" parameterType="ScoreDto"
+		resultType="ScoreDto">
+		select
+		SEQ
+		,NAME
+		,KOR
+		,ENG
+		,MAT
+		,WDATE
+		from tb_score
+	</select>
+
+	<insert id="Score_insert" parameterType="ScoreDto">
+		<selectKey resultType="String" keyProperty="seq"
+			order="BEFORE">
+			select nvl(max(seq),0)+1 as seq
+			from tb_Score
+		</selectKey>
+		insert into tb_Score
+		(
+		SEQ
+		,NAME
+		,KOR
+		,ENG
+		,MAT
+		,WDATE
+		) values
+		(
+		#{seq}
+		,#{name}
+		,#{kor}
+		,#{eng}
+		,#{mat}
+		,sysdate
+		)
+	</insert>
+	
+		<update id="Score_update" parameterType="ScoreDto">
+		update tb_Score set
+		NAME = #{name}
+		,KOR = #{kor}
+		,ENG = #{eng}
+		,MAT = #{mat}
+		where seq = #{seq}
+	</update>
+
+	<select id="Score_getView" parameterType="ScoreDto"
+		resultType="ScoreDto">
+		select
+		SEQ
+		,NAME
+		,KOR
+		,ENG
+		,MAT
+		,WDATE
+		from tb_Score 
+		where seq = #{seq}
+	</select>
+
+	<delete id="Score_delete" parameterType="ScoreDto">
+		delete from tb_Score
+		where seq = #{seq}
+	</delete>
+	
+</mapper>
+
+

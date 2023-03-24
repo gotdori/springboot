@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 3 elements to &apos;myapp2/src/main/resources/templates.layout&apos;&#x0D;&#x0A;- Original project: &apos;backend&apos;&#x0D;&#x0A;- Destination element: &apos;myapp2/src/main/resources/templates.layout&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     footer.html&#x0D;&#x0A;     header.html&#x0D;&#x0A;     nav.html" description="Copy files" destination="=myapp2/src\/main\/resources=/gradle_scope=/main=/=/gradle_used_by_scope=/main,test=/&lt;templates.layout" element1="src/main/resources/templates/layout/footer.html" element2="src/main/resources/templates/layout/header.html" element3="src/main/resources/templates/layout/nav.html" files="3" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1677040584123" units="0" version="1.0"/>
+</session>

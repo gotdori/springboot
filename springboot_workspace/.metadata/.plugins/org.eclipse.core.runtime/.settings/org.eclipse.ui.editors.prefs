@@ -1,0 +1,9 @@
+AbstractTextEditor.Color.Background=16,30,21
+AbstractTextEditor.Color.Background.SystemDefault=false
+AbstractTextEditor.Color.SelectionBackground.SystemDefault=false
+AbstractTextEditor.Color.SelectionForeground.SystemDefault=false
+STS4BootMarkerIndicationColor=39,58,18
+eclipse.preferences.version=1
+predarkestdark.AbstractTextEditor.Color.Background.SystemDefault=false
+predarkestdark.AbstractTextEditor.Color.SelectionBackground.SystemDefault=false
+predarkestdark.AbstractTextEditor.Color.SelectionForeground.SystemDefault=false

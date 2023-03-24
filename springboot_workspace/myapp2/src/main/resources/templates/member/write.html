@@ -1,0 +1,118 @@
+{{>layout/header}}
+{{>layout/nav}}
+
+
+<form name="myform" id="myform">
+<div class="container mt-3">
+  <h3>회원가입</h3>
+  <p><br></p>
+  
+
+    <p>이이이 이이 이이이~ 이이! 이이이이이이이! 이~~~~~~~</p>
+  
+
+   <table class="table">
+   	<colgroup>
+   		<col width="30%">
+   		<col width="*">
+   	</colgroup>
+    <tbody>
+      <tr>
+        <th>아이디</td>
+        <td>
+        	 <div class="input-group">
+			    <input type="text" class="form-control" 
+			    placeholder="아이디를 입력하세요"
+			    name="user_id" id="user_id">
+			    <button type="button" class="btn btn-primary" id="idcheck">아이디중복체크</button>
+			 </div>
+        </td>
+      </tr>
+      <tr>
+        <th>패스워드</td>
+        <td>
+        	 <div class="input-group">
+			    <input type="password" class="form-control" 
+			    placeholder="패스워드를 입력하세요"
+			    name="password" id="password">
+			 </div>
+        </td>
+      </tr>
+      <tr>
+        <th>패스워드확인</td>
+        <td>
+        	 <div class="input-group">
+			    <input type="password" class="form-control" 
+			    placeholder="패스워드를 입력하세요"
+			    name="password2" id="password2">
+			 </div>
+        </td>
+      </tr>
+      <tr>
+        <th>이름</td>
+        <td>
+        	 <div class="input-group">
+			    <input type="text" class="form-control" 
+			    placeholder="이름을 입력하세요"
+			    name="user_name" id="user_name">
+			 </div>
+        </td>
+      </tr>
+      <tr>
+        <th>이메일</td>
+        <td>
+        	 <div class="input-group">
+			    <input type="email" class="form-control" 
+			    placeholder="이름을 입력하세요"
+			    name="email" id="email">
+			 </div>
+        </td>
+      </tr>
+      <tr>
+        <th>전화번호</td>
+        <td>
+        	 <div class="input-group">
+			    <input type="tel" class="form-control" 
+			    placeholder="전화번호를 입력하세요"
+			    name="phone" id="phone">
+			 </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+ </div>
+
+
+ <div class="container" style="text-align:right">
+	<button type="button" class="btn btn-primary" id="btnWrite">글쓰기</button>
+ </div>
+  </form>
+  <script>
+  $(()=>{
+	  $("#btnWrite").click(()=>{
+		  $("#myform").prop("action", "/member/save");
+		  $("#myform").prop("method", "post");
+		  $("#myform").submit();
+	  })
+  
+	  $("#idcheck").click(()=>{
+// 		  $("#myform").prop("action", "/member/idcheck");
+// 		  $("#myform").prop("method", "get");
+		$.ajax({
+			url:"/member/idcheck",
+			data:$("#myform").serialize(),
+			dataType:"JSON",
+			method:"POST"
+		})
+		.done((res)=>{
+			if(res.result=="Y"){
+				alert("사용 가능한 아이디 입니다.")
+			}else{
+				alert("중복된 아이디 입니다.")
+			}
+		})
+	  })
+  })
+  </script>
+  
+{{>layout/footer}}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>{{msg}}</h1>
+<h1>{{name}}</h1>
+<h1>{{age}}</h1>
+
+<ul>
+{{#sList}}
+<li>{{.}}</li>
+{{/sList}}
+</ul>
+
+<ul>
+{{#boardList}}
+	<li>{{id}} {{title}} {{writer}} {{contents}}</li>
+{{/boardList}}
+</ul>
+
+<h1>
+{{#userid}} <!-- 키 값이 존재할 때 -->
+{{username}}님 식사는 좝솼사?
+{{/userid}}
+{{^userid}}<!-- 키 값이 존재 안할 때 -->
+로그온하세요
+{{/userid}}
+</h1>
+</body>
+</html>
